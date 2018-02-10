@@ -12,17 +12,17 @@ public class WeatherData implements Subject {
     private double pressure;
     private double humidity;
 
-//    public double getTemperature() {
-//        return this.temperature;
-//    }
-//
-//    public double getPressure() {
-//        return this.pressure;
-//    }
-//
-//    public double getHumidity() {
-//        return this.humidity;
-//    }
+    public double getTemperature() {
+        return this.temperature;
+    }
+
+    public double getPressure() {
+        return this.pressure;
+    }
+
+    public double getHumidity() {
+        return this.humidity;
+    }
 
     private void measurementsChanged() {
         for (Observer observer: observers) {
