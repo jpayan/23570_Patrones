@@ -6,3 +6,5 @@ Patrones de diseño
 18/02/02 - Observer Pattern
 
 18/02/09 - Observer Pattern
+
+18/02/16 - Decorator Pattern
