@@ -6,17 +6,32 @@ import Utils.Utils.*;
 
 public class FactoryChicago extends Factory {
     @Override
-    public Pizza createPizza(PizzaType pizza, Size size) {
+    public Pizza createPizza(PizzaType pizzaType, Size size) {
         Thickness pizzaThickness = Thickness.THICK;
-        switch (pizza) {
+        switch (pizzaType) {
             case MEXICAN:
-                return new PizzaMexican(pizzaThickness, size);
+                Pizza mexicanPizza = new PlainPizza("Mexican", pizzaThickness, size);
+                mexicanPizza = new TomatoSauce(mexicanPizza, "200ml");
+                mexicanPizza = new Cheese(mexicanPizza, "150g");
+                mexicanPizza = new Pepperoni(mexicanPizza, "100g");
+                mexicanPizza = new Beans(mexicanPizza, "50g");
+                mexicanPizza.prepare();
+                return mexicanPizza;
             case CHEESE:
-                return new PizzaCheese(pizzaThickness, size);
+                Pizza cheesePizza = new PlainPizza("Cheese", pizzaThickness, size);
+                cheesePizza = new TomatoSauce(cheesePizza, "200ml");
+                cheesePizza = new Cheese(cheesePizza, "500g");
+                cheesePizza.prepare();
+                return cheesePizza;
             case HAWAIIAN:
-                return new PizzaHawaiian(pizzaThickness, size);
+                Pizza hawaiianPizza = new PlainPizza("Hawaiian", pizzaThickness, size);
+                hawaiianPizza = new TomatoSauce(hawaiianPizza, "100ml");
+                hawaiianPizza = new Cheese(hawaiianPizza, "150g");
+                hawaiianPizza = new Ham(hawaiianPizza, "150g");
+                hawaiianPizza.prepare();
+                return hawaiianPizza;
             default:
-                return new PizzaMexican(pizzaThickness, size);
+                return new PlainPizza("Plain Pizza", pizzaThickness, size);
         }
     }
 }

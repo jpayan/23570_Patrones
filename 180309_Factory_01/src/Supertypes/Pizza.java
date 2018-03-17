@@ -6,31 +6,26 @@ public abstract class Pizza {
     protected String name;
     protected Thickness thickness;
     protected Size size;
-    protected int cheeseQty;
-    protected int sauceQty;
 
-    public Pizza(String name, Thickness thickness, Size size, int cheeseQty, int sauceQty) {
+    public Pizza(String name, Thickness thickness, Size size) {
         this.name = name;
         this.thickness = thickness;
         this.size = size;
-        this.cheeseQty = cheeseQty;
-        this.sauceQty = sauceQty;
-        this.prepare();
-        this.bake();
-        this.slice();
-        this.box();
     }
 
     public void prepare() {
-        System.out.println(String.format("Adding ingredients to %s pizza...", name));
+        System.out.println(String.format("Preparing %s...", name));
+        this.bake();
     }
     public void bake() {
-        System.out.println(String.format("Baking %s pizza...", name));
+        System.out.println("Baking pizza...");
+        this.slice();
     }
     public void slice() {
-        System.out.println(String.format("Slicing %s pizza...", name));
+        System.out.println("Slicing pizza...");
+        this.box();
     }
     public void box() {
-        System.out.println(String.format("Boxing %s pizza...", name));
+        System.out.println("Boxing pizza...");
     }
 }
