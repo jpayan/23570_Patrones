@@ -19,6 +19,8 @@ public class Main {
         invoker.setSlot1(new DoorClose(frontDoor));
         invoker.pressButton();
 
+        invoker.pressButton();
+
         invoker.setSlot1(new LightBulbOff(kitchenLightBulb));
         invoker.pressButton();
 

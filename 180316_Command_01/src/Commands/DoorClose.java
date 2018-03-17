@@ -19,7 +19,7 @@ public class DoorClose implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Door closed.");
+        door.close();
     }
 
     @Override

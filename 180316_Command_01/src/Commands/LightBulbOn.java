@@ -19,7 +19,7 @@ public class LightBulbOn implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Light bulb off.");
+        lightBulb.on();
     }
 
     @Override

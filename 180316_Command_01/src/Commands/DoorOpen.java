@@ -19,7 +19,7 @@ public class DoorOpen implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Door opened.");
+        door.open();
     }
 
     @Override
