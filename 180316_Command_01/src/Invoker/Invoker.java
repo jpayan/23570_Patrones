@@ -2,22 +2,43 @@ package Invoker;
 
 import Commands.Command;
 
+import java.util.ArrayList;
+
 public class Invoker {
-    Command slot1;
+    private ArrayList<Command> commands;
+    private Command lastCommand;
 
-    public Invoker(Command slot1) {
-        this.slot1 = slot1;
+    public Invoker(ArrayList<Command> commands) {
+        this.commands = commands;
     }
 
-    public String getSlot1() {
-        return slot1.toString();
+    public void pressButton(int i) {
+        Command invokedCommand = this.commands.get(i);
+        invokedCommand.execute();
+        this.lastCommand = invokedCommand;
     }
 
-    public void setSlot1(Command slot1) {
-        this.slot1 = slot1;
+    public void addCommand(Command command) {
+        this.commands.add(command);
     }
 
-    public void pressButton() {
-        slot1.execute();
+    public void addCommands(ArrayList<Command> commands) {
+        this.commands.addAll(commands);
+    }
+
+    public void removeCommand(int i) {
+        this.commands.remove(i);
+    }
+
+    public void removeCommand(Command command) {
+        this.commands.remove(command);
+    }
+
+    public void clearCommands() {
+        this.commands.clear();
+    }
+
+    public void undo() {
+        this.lastCommand.undo();
     }
 }

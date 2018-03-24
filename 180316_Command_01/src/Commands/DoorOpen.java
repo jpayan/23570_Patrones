@@ -24,7 +24,7 @@ public class DoorOpen implements Command {
 
     @Override
     public void undo() {
-
+        door.close();
     }
 
     @Override

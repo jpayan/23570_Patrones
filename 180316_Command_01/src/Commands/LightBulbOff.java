@@ -24,7 +24,7 @@ public class LightBulbOff implements Command {
 
     @Override
     public void undo() {
-
+        lightBulb.on();
     }
 
     @Override
