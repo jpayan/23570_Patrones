@@ -9,4 +9,10 @@ Patrones de diseño
 
 18/02/16 - Decorator Pattern
 
-18/02/23 - Decorator Pattern & Factory Pattern
+18/02/23 - Decorator Pattern
+
+18/02/23 - Factory Pattern
+
+18/03/09 - Factory Pattern
+
+18/03/16 - Command Pattern
