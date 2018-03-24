@@ -3,19 +3,21 @@ package Invoker;
 import Commands.Command;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Invoker {
     private ArrayList<Command> commands;
-    private Command lastCommand;
+    private Stack<Command> history;
 
     public Invoker(ArrayList<Command> commands) {
         this.commands = commands;
+        this.history = new Stack<>();
     }
 
     public void pressButton(int i) {
         Command invokedCommand = this.commands.get(i);
         invokedCommand.execute();
-        this.lastCommand = invokedCommand;
+        this.history.add(invokedCommand);
     }
 
     public void addCommand(Command command) {
@@ -39,6 +41,8 @@ public class Invoker {
     }
 
     public void undo() {
-        this.lastCommand.undo();
+        if(!history.empty()) {
+            this.history.pop().undo();
+        }
     }
 }

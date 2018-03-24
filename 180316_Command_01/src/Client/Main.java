@@ -26,5 +26,9 @@ public class Main {
         invoker.pressButton(2);
         invoker.pressButton(3);
         invoker.undo();
+        invoker.undo();
+        invoker.undo();
+        invoker.undo();
+        invoker.undo(); // Do nothing since invoker's history if empty.
     }
 }
